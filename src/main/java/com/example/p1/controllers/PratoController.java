@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "/api/alimento")
+@RequestMapping(path = "/api/pratos")
 public class PratoController {
     @GetMapping(path = "", produces= MediaType.APPLICATION_JSON_VALUE)
    public List<Prato>getUsers() {

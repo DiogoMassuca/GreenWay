@@ -17,9 +17,9 @@ public class RestauranteRepository {
         return restaurante;
     }
 
-    public static Restaurante getRestaurante(String name) {
+    public static Restaurante getRestaurante(int id) {
         for (Restaurante restaurante : restaurantes) {
-            if (restaurante.getName() == name) return restaurante;
+            if (restaurante.getId() == id) return restaurante;
         }
         return null;
     }
