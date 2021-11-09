@@ -1,5 +1,6 @@
 package com.example.p1.models;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import javax.persistence.Column;
@@ -18,6 +19,7 @@ public class User {
     @Column(name="user_password")private String password;
     @Column(name="user_email")private String email;
     @Column(name="user_id")private int id;
+    @Column(name="user_bdate")private LocalDate bdate;
     private int nextId = 0;
 
     private ArrayList<Intol>intols;
