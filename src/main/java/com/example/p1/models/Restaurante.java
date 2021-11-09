@@ -1,6 +1,8 @@
 package com.example.p1.models;
 
 import java.util.ArrayList;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,9 +14,9 @@ import javax.persistence.Table;
 public class Restaurante {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String name;
-    private String contact;
-    private int id;
+    @Column(name="res_name")private String name;
+    @Column(name="res_contact")private String contact;
+    @Column(name="res_id") private int id;
     private int nextId = 0;
 
     private ArrayList<Ementa>pr;

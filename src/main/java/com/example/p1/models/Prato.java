@@ -1,6 +1,8 @@
 package com.example.p1.models;
 
 import java.util.ArrayList;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
@@ -12,8 +14,8 @@ import javax.persistence.Id;
 public class Prato {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String name;
-    private String type;
+    @Column(name="pra_name")private String name;
+    @Column(name="pra_type")private String type;
     private ArrayList<Ementa>pr;
 
     public Prato(String name, String type) {

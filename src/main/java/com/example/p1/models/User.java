@@ -2,6 +2,7 @@ package com.example.p1.models;
 
 import java.util.ArrayList;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
@@ -13,8 +14,10 @@ import javax.persistence.Id;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String name, password, email;
-    private int id;
+    @Column(name="user_name")private String name;
+    @Column(name="user_password")private String password;
+    @Column(name="user_email")private String email;
+    @Column(name="user_id")private int id;
     private int nextId = 0;
 
     private ArrayList<Intol>intols;

@@ -1,5 +1,6 @@
 package com.example.p1.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
@@ -11,7 +12,7 @@ import javax.persistence.Id;
 public class Alimento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String name;
+    @Column(name="ali_name")private String name;
 
     public Alimento(String name){
         this.name = name;

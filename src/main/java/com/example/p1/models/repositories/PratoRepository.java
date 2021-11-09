@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 import com.example.p1.models.*;
 
-public class PratosRepository {
+public class PratoRepository {
     private static ArrayList<Prato> pratos = new ArrayList<Prato>();
     public static void populate(){
         pratos.add(new Prato("Ameijoas", "Marisco"));
