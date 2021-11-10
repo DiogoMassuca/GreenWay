@@ -1,17 +1,23 @@
 package com.example.p1.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="rates")
 public class Rate {
-    private float rating;
+    @Column(name="rate_rating")private double rating;
     private User user;
     private Restaurante restaurante;
     
-    public Rate(float rating, User user, Restaurante restaurante) {
+    public Rate(double rating, User user, Restaurante restaurante) {
         this.rating = rating;
         this.user = user;
         this.restaurante = restaurante;
     }
 
-    public float getRating() {
+    public double getRating() {
         return rating;
     }
 

@@ -1,10 +1,13 @@
 package com.example.p1.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="intols")
 public class Intol {
-    @JsonIgnoreProperties({"intols"})
-    private String type;
+    @Column(name="intol_type") String type;
     private User user;
     private Alimento alimento;
 
