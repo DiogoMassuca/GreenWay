@@ -12,14 +12,14 @@ import javax.persistence.Table;
 public class Rate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="rate_res")private int res_id; //int id
     @Column(name="rate_rating")private double rating;
-    private User user;
-    private Restaurante restaurante;
+    @Column(name="rate_user")private int user_id;
     
-    public Rate(double rating, User user, Restaurante restaurante) {
+    public Rate(double rating, int user_id, int res_id) {
         this.rating = rating;
-        this.user = user;
-        this.restaurante = restaurante;
+        this.user_id = user_id;
+        this.res_id = res_id;
     }
 
     public double getRating() {
@@ -30,11 +30,11 @@ public class Rate {
         this.rating = rating;
     }
 
-    public User getUser() {
-        return user;
+    public int getUser() {
+        return user_id;
     }
 
-    public Restaurante getRestaurante() {
-        return restaurante;
+    public int getRestaurante() {
+        return res_id;
     }
 }

@@ -13,24 +13,24 @@ public class Ementa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="eme_type") String type;    
-    @Column(name="eme_res") Restaurante restaurante;
-    @Column(name="eme_pra") Prato prato;
+    @Column(name="eme_res") int res_id;
+    @Column(name="eme_pra") int pra_id;
     
-    public Ementa(String type, Restaurante restaurante, Prato prato) {
+    public Ementa(String type, int res_id, int pra_id) {
         this.type = type;
-        this.restaurante = restaurante;
-        this.prato = prato;
+        this.res_id = res_id;
+        this.pra_id = pra_id;
     }
 
     public String getType() {
         return type;
     }
 
-    public Restaurante getRestaurante() {
-        return restaurante;
+    public int getRestaurante() {
+        return res_id;
     }
 
-    public Prato getPrato() {
-        return prato;
+    public int getPrato() {
+        return pra_id;
     }
 }
