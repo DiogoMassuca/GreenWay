@@ -2,11 +2,16 @@ package com.example.p1.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="intols")
 public class Intol {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="intol_type") String type;
     private User user;
     private Alimento alimento;
