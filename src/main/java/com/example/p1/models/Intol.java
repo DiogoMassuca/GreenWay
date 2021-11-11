@@ -13,7 +13,7 @@ public class Intol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="intol_type") String type;
-    @Column(name="intol_res")private int user_id;
+    @Column(name="intol_user")private int user_id;
     @Column(name="intol_ali")private String ali_name;
 
     public Intol(String type, int user_id, String ali_name){
