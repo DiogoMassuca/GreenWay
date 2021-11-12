@@ -13,8 +13,8 @@ public class Ementa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="eme_id")  int eme_id;    
-    @Column(name="eme_res") int res_id;
-    @Column(name="eme_pra") int pra_id;
+    @Column(name="eme_res_id") int res_id;
+    @Column(name="eme_pra_id") int pra_id;
     
     public Ementa(int eme_id, int res_id, int pra_id) {
         this.eme_id = eme_id;

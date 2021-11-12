@@ -13,9 +13,9 @@ public class Rate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="rate_id")private int rate_id; 
-    @Column(name="rate_res")private int res_id; 
+    @Column(name="rate_res_id")private int res_id; 
     @Column(name="rate_rating")private double rating;
-    @Column(name="rate_user")private int user_id;
+    @Column(name="rate_user_id")private int user_id;
     private int nextId = 0;
 
     public Rate(double rating, int user_id, int res_id) {
