@@ -14,13 +14,18 @@ import javax.persistence.Id;
 public class Prato {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="pra_id")private int id;
     @Column(name="pra_name")private String name;
     @Column(name="pra_type")private String type;
+    private int nextId = 0;
+
     private ArrayList<Ementa>pr;
 
     public Prato(String name, String type) {
         this.name = name;
         this.type = type;
+        this.id = nextId;
+        nextId++;
     }
 
     public String getName() {

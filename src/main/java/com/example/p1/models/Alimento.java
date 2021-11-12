@@ -12,17 +12,21 @@ import javax.persistence.Id;
 public class Alimento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="ali_id") private int id;
     @Column(name="ali_name")private String name;
+    private int nextId = 0;
 
     public Alimento(String name){
         this.name = name;
+        this.id = nextId;
+        nextId++;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public int getId() {
+        return id;
+    }   
 }

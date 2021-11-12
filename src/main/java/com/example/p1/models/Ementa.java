@@ -12,18 +12,18 @@ import javax.persistence.Table;
 public class Ementa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="eme_type") String type;    
+    @Column(name="eme_id")  int eme_id;    
     @Column(name="eme_res") int res_id;
     @Column(name="eme_pra") int pra_id;
     
-    public Ementa(String type, int res_id, int pra_id) {
-        this.type = type;
+    public Ementa(int eme_id, int res_id, int pra_id) {
+        this.eme_id = eme_id;
         this.res_id = res_id;
         this.pra_id = pra_id;
     }
 
-    public String getType() {
-        return type;
+    public int getEmeId() {
+        return eme_id;
     }
 
     public int getRestaurante() {

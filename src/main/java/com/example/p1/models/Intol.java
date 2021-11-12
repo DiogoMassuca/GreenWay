@@ -12,18 +12,20 @@ import javax.persistence.Table;
 public class Intol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="intol_type") String type;
+    @Column(name="intol_id") private int intol_id;
     @Column(name="intol_user")private int user_id;
     @Column(name="intol_ali")private String ali_name;
+    private int nextId = 0;
 
-    public Intol(String type, int user_id, String ali_name){
-        this.type = type;
+    public Intol(int intol_id, int user_id, String ali_name){
+        this.intol_id = nextId;
         this.user_id = user_id;
         this.ali_name = ali_name;
+        nextId++;
     }
 
-    public String getType() {
-        return type;
+    public int getIntolId() {
+        return intol_id;
     }
 
     public int getUser() {
