@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "/api/users")
 public class UserController {
     private UserRepository userRepository;
+    
    @GetMapping(path = "", produces= MediaType.APPLICATION_JSON_VALUE)
    public Iterable<User>getUsers() {
        return userRepository.findAll();
