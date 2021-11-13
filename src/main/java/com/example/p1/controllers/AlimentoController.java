@@ -1,6 +1,5 @@
 package com.example.p1.controllers;
 
-import java.util.List;
 
 import com.example.p1.models.Alimento;
 import com.example.p1.models.repositories.AlimentoRepository;
@@ -13,8 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(path = "/api/alimentos")
 public class AlimentoController {
+    private AlimentoRepository alimentoRepository;
     @GetMapping(path = "", produces= MediaType.APPLICATION_JSON_VALUE)
-   public List<Alimento>getAlimentos() {
-       return AlimentoRepository.getAllAlimentos();
+   public Iterable<Alimento>getAlimentos() {
+       return alimentoRepository.findAll();
    }
 }

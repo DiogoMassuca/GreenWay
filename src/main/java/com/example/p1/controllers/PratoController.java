@@ -1,7 +1,5 @@
 package com.example.p1.controllers;
 
-import java.util.List;
-
 import com.example.p1.models.Prato;
 import com.example.p1.models.repositories.PratoRepository;
 
@@ -13,9 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(path = "/api/pratos")
 public class PratoController {
+    private PratoRepository pratoRepository;
     @GetMapping(path = "", produces= MediaType.APPLICATION_JSON_VALUE)
-   public List<Prato>getUsers() {
-       return PratoRepository.getAllPratos();
+   public Iterable<Prato>getPratos() {
+       return pratoRepository.findAll();
    }
 
 }

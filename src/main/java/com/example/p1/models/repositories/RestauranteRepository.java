@@ -3,19 +3,10 @@ package com.example.p1.models.repositories;
 import java.util.ArrayList;
 import com.example.p1.models.*;
 
-public class RestauranteRepository {
-    private static ArrayList<Restaurante> restaurantes = new ArrayList<Restaurante>();
-    public static void populate(){
-        restaurantes.add(new Restaurante("Veggie", "veggie@gmail.com"));
-    }
-    public static ArrayList<Restaurante> getAllRestaurantes() {
-        return restaurantes;
-    }
+import org.springframework.data.repository.CrudRepository;
 
-    public static Restaurante addRestaurante(Restaurante restaurante) {
-        restaurantes.add(restaurante);
-        return restaurante;
-    }
+public interface RestauranteRepository extends CrudRepository<Restaurante, Integer>{
+    static ArrayList<Restaurante> restaurantes = new ArrayList<Restaurante>();
 
     public static Restaurante getRestaurante(int id) {
         for (Restaurante restaurante : restaurantes) {
