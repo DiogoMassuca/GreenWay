@@ -4,6 +4,7 @@ import com.example.p1.models.Restaurante;
 import com.example.p1.models.exceptions.NotFoundException;
 import com.example.p1.models.repositories.RestauranteRepository;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,7 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(path = "/api/resturante")
-public class RestauranteController {
+public class RestauranteController 
+{
+    @Autowired
     private RestauranteRepository restauranteRepository;
     @GetMapping(path = "", produces= MediaType.APPLICATION_JSON_VALUE)
    public Iterable<Restaurante>getRestaurantes() {
