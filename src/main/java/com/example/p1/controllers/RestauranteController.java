@@ -22,12 +22,5 @@ public class RestauranteController
        return restauranteRepository.findAll();
    }
 
-@GetMapping(path = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
- public Restaurante getRestaurante(@PathVariable("id")int id) throws NotFoundException{
-     Restaurante restaurante = RestauranteRepository.getRestaurante(id);
-    if (restaurante != null)
-           return restaurante;
-     else
-          throw new NotFoundException("Restaurante " + id + "not found.", null, null);
 }
-}
+

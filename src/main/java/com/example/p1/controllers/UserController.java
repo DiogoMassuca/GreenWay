@@ -23,13 +23,4 @@ public class UserController {
        return userRepository.findAll();
    }
 
-   @GetMapping(path = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-   public User getUser(@PathVariable("id")int id) throws NotFoundException{
-       User user = UserRepository.getUser(id);
-       if (user != null)
-            return user;
-        else
-            throw new NotFoundException("User " + id + "not found.", null, null);
-
-   }
 }
