@@ -1,7 +1,6 @@
 package com.example.p1.models;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,18 +19,7 @@ public class User {
     @Column(name="user_email")private String email;
     @Column(name="user_id")private int id;
     @Column(name="user_bdate")private LocalDate bdate;
-    private int nextId = 0;
-
-    private ArrayList<Intol>intols;
-    private ArrayList<Rate>rates;
-    public User(String name, String password){
-        this.name = name;
-        this.id = nextId;
-        this.password = password;
-        email = "";
-        nextId++;
-        
-    }
+  
     public String getName() {
         return name;
     }
@@ -52,11 +40,5 @@ public class User {
     }
     public int getId() {
         return id;
-    }
-    public ArrayList<Intol>getIntols(){
-        return intols;
-    }
-    public ArrayList<Rate>getRates(){
-        return rates;
     }
 }

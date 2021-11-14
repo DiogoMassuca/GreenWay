@@ -14,13 +14,6 @@ public class Alimento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="ali_id") private int id;
     @Column(name="ali_name")private String name;
-    private int nextId = 0;
-
-    public Alimento(String name){
-        this.name = name;
-        this.id = nextId;
-        nextId++;
-    }
 
     public String getName() {
         return name;

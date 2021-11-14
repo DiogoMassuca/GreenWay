@@ -16,12 +16,6 @@ public class Ementa {
     @Column(name="eme_res_id") int res_id;
     @Column(name="eme_pra_id") int pra_id;
     
-    public Ementa(int eme_id, int res_id, int pra_id) {
-        this.eme_id = eme_id;
-        this.res_id = res_id;
-        this.pra_id = pra_id;
-    }
-
     public int getEmeId() {
         return eme_id;
     }
