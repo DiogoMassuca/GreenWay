@@ -14,13 +14,8 @@ public class Prato {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="pra_id")private int id;
     @Column(name="pra_name")private String name;
-    @Column(name="pra_type")private String type;
 
     public String getName() {
         return name;
-    }
-
-    public String getType(){
-        return type;    
     }
 }

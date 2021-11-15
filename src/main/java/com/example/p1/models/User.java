@@ -14,10 +14,10 @@ import javax.persistence.Id;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="user_id")private int id;
     @Column(name="user_name")private String name;
     @Column(name="user_password")private String password;
     @Column(name="user_email")private String email;
-    @Column(name="user_id")private int id;
     @Column(name="user_bdate")private LocalDate bdate;
   
     public String getName() {
