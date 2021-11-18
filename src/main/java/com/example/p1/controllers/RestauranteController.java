@@ -33,5 +33,11 @@ public class RestauranteController
             return _restaurante.get();
     }
 
+   @GetMapping(path = "/not/{name}", produces= MediaType.APPLICATION_JSON_VALUE)
+   public String getResNoAli1(@PathVariable String name) {
+       return restauranteRepository.getResNoAli1();
+   }
+
+
 }
 

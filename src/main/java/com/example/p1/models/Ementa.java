@@ -12,7 +12,8 @@ import javax.persistence.Table;
 public class Ementa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="eme_id")  int eme_id;    
+    @Column(name="eme_id")  int eme_id;   
+    @Column(name="eme_name") String name; 
     @Column(name="eme_res_id") int res_id;
     @Column(name="eme_pra_id") int pra_id;
     
@@ -21,6 +22,10 @@ public class Ementa {
 
     public int getEmeId() {
         return eme_id;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public int getRestaurante() {
