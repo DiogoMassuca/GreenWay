@@ -1,7 +1,6 @@
 package com.example.p1.models.repositories;
 
 import com.example.p1.models.*;
-import com.example.p1.models.views.ResNoAli;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

@@ -5,8 +5,6 @@ import java.util.Optional;
 import com.example.p1.models.Restaurante;
 import com.example.p1.models.exceptions.NotFoundException;
 import com.example.p1.models.repositories.RestauranteRepository;
-import com.example.p1.models.views.ResNoAli;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
