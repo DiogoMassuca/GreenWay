@@ -5,6 +5,7 @@ import java.util.Optional;
 import com.example.p1.models.Restaurante;
 import com.example.p1.models.exceptions.NotFoundException;
 import com.example.p1.models.repositories.RestauranteRepository;
+import com.example.p1.models.views.ResNoAli;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -34,7 +35,7 @@ public class RestauranteController
     }
 
    @GetMapping(path = "/not/{name}", produces= MediaType.APPLICATION_JSON_VALUE)
-   public String getResNoAli1(@PathVariable String name) {
+   public Iterable<ResNoAli> getResNoAli1(@PathVariable String name) {
        return restauranteRepository.getResNoAli1();
    }
 
