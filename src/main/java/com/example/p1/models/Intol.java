@@ -16,6 +16,9 @@ public class Intol {
     @Column(name="intol_user_id")private int user_id;
     @Column(name="intol_ali_id")private String ali_name;
 
+    public Intol() {
+    }
+
     public int getIntolId() {
         return intol_id;
     }

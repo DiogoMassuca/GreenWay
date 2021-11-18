@@ -17,6 +17,9 @@ public class Rate {
     @Column(name="rate_rating")private double rating;
     @Column(name="rate_user_id")private int user_id;
 
+    public Rate() {
+    }
+
     public double getRating() {
         return rating;
     }

@@ -14,8 +14,15 @@ public class Prato {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="pra_id")private int id;
     @Column(name="pra_name")private String name;
+    
+    public Prato() {
+    }
 
     public String getName() {
         return name;
+    }
+
+    public int getId(){
+        return id;
     }
 }

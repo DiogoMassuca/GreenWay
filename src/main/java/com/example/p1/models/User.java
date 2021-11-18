@@ -20,6 +20,8 @@ public class User {
     @Column(name="user_email")private String email;
     @Column(name="user_bdate")private LocalDate bdate;
   
+    public User(){}
+    
     public String getName() {
         return name;
     }

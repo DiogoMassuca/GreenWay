@@ -15,6 +15,9 @@ public class Alimento {
     @Column(name="ali_id") private int id;
     @Column(name="ali_name")private String name;
 
+    public Alimento() {
+    }
+
     public String getName() {
         return name;
     }

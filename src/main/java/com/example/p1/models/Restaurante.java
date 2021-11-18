@@ -16,6 +16,8 @@ public class Restaurante {
     @Column(name="res_name")private String name;
     @Column(name="res_contact")private String contact;
   
+    public Restaurante() {
+    }
     public String getName() {
         return name;
     }
