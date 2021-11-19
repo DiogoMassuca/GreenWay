@@ -1,0 +1,52 @@
+
+select *
+from restaurantes, ementas, pratos, alimentos, pratoalimento
+where eme_res_id = res_id and eme_pra_id = pra_id and pa_pra_id = pra_id and pa_ali_id = ali_id and ali_id <> X
+
+
+
+
+insert into users (user_name, user_email, user_password, user_bdate) values ('Salvador', 'slm@gmail.com', 'salvador123', to_date('2002.04.24','YYYY.MM.DD'));
+insert into users (user_name, user_email, user_password, user_bdate) values ('Diogo', 'dm@gmail.com', 'diogo123', to_date('2002.07.04','YYYY.MM.DD'));
+insert into users (user_name, user_email, user_password, user_bdate) values ('Maria', 'ma@gmail.com', 'maria123', to_date('2001.01.19','YYYY.MM.DD'));
+
+insert into alimentos (ali_name) values ('Camarão');
+insert into alimentos (ali_name) values ('Pão');
+insert into alimentos (ali_name) values ('Carne');
+insert into alimentos (ali_name) values ('Ovo');
+insert into alimentos (ali_name) values ('Queijo');
+insert into alimentos (ali_name) values ('Nozes');
+insert into alimentos (ali_name) values ('Cereais');
+insert into alimentos (ali_name) values ('Couve');
+insert into alimentos (ali_name) values ('Tomate');
+
+insert into restaurantes (res_name, res_contact) values ('Tunel de Santos', 'tds@gmail.com');
+insert into restaurantes (res_name, res_contact) values ('O Marco', 'om@gmail.com');
+insert into restaurantes (res_name, res_contact) values ('A cozinheira', 'ac@gmail.com');
+
+insert into pratos (pra_name) values ('Francesinha vegetariana');
+insert into pratos (pra_name) values ('Tosta de queijo');
+insert into pratos (pra_name) values ('Salada de fruta');
+insert into pratos (pra_name) values ('Cozido à portuguesa');
+insert into pratos (pra_name) values ('Linguado grelhado');
+insert into pratos (pra_name) values ('Bitoque do lombo');
+insert into pratos (pra_name) values ('Omelete');
+insert into pratos (pra_name) values ('Ovas de pescada');
+insert into pratos (pra_name) values ('Salada mista');
+insert into pratos (pra_name) values ('Sopa de feijão');
+
+insert into intols (intol_name, intol_user_id, intol_ali_id) values ('Lactose', 1, 3);
+insert into intols (intol_name, intol_user_id, intol_ali_id) values ('Gluten', 2, 2);
+insert into intols (intol_name, intol_user_id, intol_ali_id) values ('Frutose', 3, 1);
+
+insert into ementas (eme_name, eme_res_id, eme_pra_id) values ('Vegetariano', 1, 3);
+insert into ementas (eme_name, eme_res_id, eme_pra_id) values ('Carne', 2, 2);
+insert into ementas (eme_name, eme_res_id, eme_pra_id) values ('Peixe', 3, 1);
+
+insert into rates (rate_res_id, rate_user_id, rate_rating) values (1, 2, 4.5);
+insert into rates (rate_res_id, rate_user_id, rate_rating) values (2, 3, 3.8);
+insert into rates (rate_res_id, rate_user_id, rate_rating) values (3, 1, 4.1);
+
+insert into pratoalimento (pa_pra_id, pa_ali_id) values (1,3);
+insert into pratoalimento (pa_pra_id, pa_ali_id) values (2,2);
+insert into pratoalimento (pa_pra_id, pa_ali_id) values (3,1);
