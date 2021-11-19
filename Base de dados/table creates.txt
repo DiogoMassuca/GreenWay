@@ -1,0 +1,99 @@
+create table users (
+	user_name VARCHAR(60) not null,
+	user_id SERIAL not null,
+	user_email VARCHAR(60),
+	user_password VARCHAR(60),
+	user_bdate date not null,
+	primary key (user_id)
+);
+
+create table restaurantes(
+	res_name VARCHAR (60) not null,
+	res_id SERIAL not null,
+	res_contact VARCHAR (60),
+	primary key (res_id)
+);
+
+create table alimentos(
+	ali_id SERIAL not null,
+	ali_name VARCHAR (60) not null,
+	primary key (ali_id)
+);
+
+create table pratos(
+	pra_id SERIAL not null,
+	pra_name VARCHAR (60) not null,
+	primary key (pra_id)
+);
+
+create table intols(
+	intol_id SERIAL not null,
+	intol_name VARCHAR (60),
+	intol_user_id INTEGER not null,
+	intol_ali_id INTEGER not null,
+	primary key (intol_id)
+);
+
+create table ementas(
+	eme_id SERIAL not null,
+	eme_name VARCHAR (60),
+	eme_res_id INTEGER not null,
+	eme_pra_id INTEGER not null,
+	primary key (eme_id)
+);
+
+create table rates(
+	rate_id SERIAL not null,
+	rate_res_id INTEGER not null,
+	rate_rating DOUBLE PRECISION not null,
+	rate_user_id INTEGER not null,
+	primary key (rate_id)
+);
+
+create table pratoalimento(
+	pa_id SERIAL not null,
+	pa_pra_id INTEGER not null,
+	pa_ali_id INTEGER not null,
+	primary key (pa_id)
+);
+--foreign keys
+
+alter table pratoalimento
+add constraint pa_fk_pratos
+foreign key (pa_pra_id) references pratos(pra_id)
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter table pratoalimento
+add constraint pa_fk_ali
+foreign key (pa_ali_id) references alimentos(ali_id)
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter table intols
+add constraint intols_fk_user
+foreign key (intol_user_id) references users(user_id)
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter table intols
+add constraint intols_fk_ali
+foreign key (intol_ali_id) references alimentos(ali_id)
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter table ementas
+add constraint ementas_fk_restaurantes
+foreign key (eme_res_id) references restaurantes(res_id)
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter table ementas
+add constraint ementas_fk_pratos
+foreign key (eme_pra_id) references pratos(pra_id)
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter table rates
+add constraint rates_fk_users
+foreign key (rate_user_id) references users(user_id)
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter table rates
+add constraint rates_fk_restaurantes
+foreign key (rate_res_id) references restaurantes(res_id)
+ON DELETE NO ACTION ON UPDATE NO ACTION;
