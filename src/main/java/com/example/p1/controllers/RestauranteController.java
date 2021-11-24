@@ -37,6 +37,16 @@ public class RestauranteController
        return restauranteRepository.getResNoAli1();
    }
 
+   @GetMapping(path = "/not/2", produces= MediaType.APPLICATION_JSON_VALUE)
+   public Iterable<String> getResNoAli2() {
+       return restauranteRepository.getResNoAli1();
+   }
+
+   @GetMapping(path = "/not/3", produces= MediaType.APPLICATION_JSON_VALUE)
+   public Iterable<String> getResNoAli3() {
+       return restauranteRepository.getResNoAli1();
+   }
+
 
 }
 
