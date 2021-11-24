@@ -35,9 +35,4 @@ public class UserController {
         else
             return _user.get();
     }
-
-    @PostMapping(path = "/created", produces = MediaType.APPLICATION_JSON_VALUE)
-    public void saveStudent(@RequestBody User userId) {
-        Integer inserted = userRepository.createUser(userId);
-    }
 }
