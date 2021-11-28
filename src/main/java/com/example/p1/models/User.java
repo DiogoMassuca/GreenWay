@@ -43,4 +43,7 @@ public class User {
     public int getId() {
         return id;
     }
+    public LocalDate getBdate() {
+        return bdate;
+    }
 }
