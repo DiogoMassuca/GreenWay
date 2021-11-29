@@ -37,7 +37,7 @@ public class UserController {
     }
     
     @PostMapping(path = "/created", produces = MediaType.APPLICATION_JSON_VALUE)
-    public void createUser(@RequestBody User userId) {
-        Integer created = userRepository.createUser(userId);
+    public void createUser(@RequestBody User user) {
+        Integer created = userRepository.createUser(user);
     }
 }
