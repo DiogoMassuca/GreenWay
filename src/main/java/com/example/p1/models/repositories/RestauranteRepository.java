@@ -11,21 +11,6 @@ public interface RestauranteRepository extends CrudRepository<Restaurante, Integ
                             "WHERE eme_res_id = res_id AND eme_pra_id = pra_id AND pa_pra_id = pra_id AND pa_ali_id = ali_id AND ali_id <> 1";
 
                             @Query(value=resQuery1, nativeQuery=true)
-                            Iterable<String>getResNoAli1();
-        
-        String resQuery2 = "SELECT res_name " +
-                            "FROM restaurantes, ementas, pratos, alimentos, pratoalimento " +
-                            "WHERE eme_res_id = res_id AND eme_pra_id = pra_id AND pa_pra_id = pra_id AND pa_ali_id = ali_id AND ali_id <> 2";
-
-                            @Query(value=resQuery2, nativeQuery=true)
-                            Iterable<String>getResNoAli2();
-
-        String resQuery3 = "SELECT res_name " +
-                            "FROM restaurantes, ementas, pratos, alimentos, pratoalimento " +
-                            "WHERE eme_res_id = res_id AND eme_pra_id = pra_id AND pa_pra_id = pra_id AND pa_ali_id = ali_id AND ali_id <> 3";
-
-                            @Query(value=resQuery3, nativeQuery=true)
-                            Iterable<String>getResNoAli3();
-        
+                            Iterable<String>getResNoAli1();        
     }
 

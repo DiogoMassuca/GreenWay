@@ -32,21 +32,9 @@ public class RestauranteController
             return _restaurante.get();
     }
 
-   @GetMapping(path = "/not/1", produces= MediaType.APPLICATION_JSON_VALUE)
-   public Iterable<String> getResNoAli1() {
+   @GetMapping(path = "/not/{id:[0-9]+}", produces= MediaType.APPLICATION_JSON_VALUE)
+   public Iterable<String> getResNoAli1(@PathVariable int id) {
        return restauranteRepository.getResNoAli1();
    }
-
-   @GetMapping(path = "/not/2", produces= MediaType.APPLICATION_JSON_VALUE)
-   public Iterable<String> getResNoAli2() {
-       return restauranteRepository.getResNoAli1();
-   }
-
-   @GetMapping(path = "/not/3", produces= MediaType.APPLICATION_JSON_VALUE)
-   public Iterable<String> getResNoAli3() {
-       return restauranteRepository.getResNoAli1();
-   }
-
-
 }
 
