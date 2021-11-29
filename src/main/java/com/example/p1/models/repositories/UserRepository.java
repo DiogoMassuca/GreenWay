@@ -10,7 +10,7 @@ import org.springframework.data.repository.query.Param;
 
 public interface UserRepository extends CrudRepository<User, Integer>{
     @Modifying @Transactional
-    @Query(value="insert into user (user_name, user_email, user_password, user_bdate)"+
+    @Query(value="insert into users (user_name, user_email, user_password, user_bdate)"+
         " values(:#{#User.name}, :#{#User.email}, :#{#User.password}, "+
         ":#{#User.bdate})", nativeQuery=true)
     Integer createUser(@Param("User") User user);
