@@ -17,5 +17,5 @@ public interface UserRepository extends CrudRepository<User, Integer>{
         ":#{#User.bdate})", nativeQuery=true)
     Integer createUser(@Param("User") User user);
 
-    Optional<User> findByNameAndPassword(String email, String password);
+    Optional<User> findByNameAndPassword(String name, String password);
 }
