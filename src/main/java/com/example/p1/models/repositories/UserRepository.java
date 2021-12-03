@@ -1,4 +1,6 @@
 package com.example.p1.models.repositories;
+import java.util.Optional;
+
 import javax.transaction.Transactional;
 
 import com.example.p1.models.*;
@@ -14,4 +16,6 @@ public interface UserRepository extends CrudRepository<User, Integer>{
         " values(:#{#User.name}, :#{#User.email}, :#{#User.password}, "+
         ":#{#User.bdate})", nativeQuery=true)
     Integer createUser(@Param("User") User user);
+
+    Optional<User> findByNameAndPassword(String email, String password);
 }

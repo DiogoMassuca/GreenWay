@@ -1,11 +1,9 @@
 package com.example.p1.controllers;
 
 import java.util.Optional;
-
 import com.example.p1.models.User;
 import com.example.p1.models.exceptions.NotFoundException;
 import com.example.p1.models.repositories.UserRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,6 +32,17 @@ public class UserController {
                 new NotFoundException("" + id, "User", "id");
         else
             return _user.get();
+    }
+
+    //Logins
+    @GetMapping(path = "/{name}/{password}", produces=
+    MediaType.APPLICATION_JSON_VALUE)
+    public User getUserByNameAndPassword(@PathVariable String name, @PathVariable String password) 
+    {
+        Optional<User> _user = userRepository.findByNameAndPassword(name, password);
+        if (_user.isEmpty())
+        throw new NotFoundException("" + name , "User and password", password);
+        else return _user.get();
     }
     
     @PostMapping(path = "/created", produces = MediaType.APPLICATION_JSON_VALUE)
