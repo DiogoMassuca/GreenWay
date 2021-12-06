@@ -34,7 +34,7 @@ public class UserController {
             return _user.get();
     }
 
-    //Logins
+    //Vai ser usado para logins
     @GetMapping(path = "/{name}/{password}", produces=
     MediaType.APPLICATION_JSON_VALUE)
     public User getUserByNameAndPassword(@PathVariable String name, @PathVariable String password) 
