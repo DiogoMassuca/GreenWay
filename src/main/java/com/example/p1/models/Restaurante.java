@@ -15,9 +15,10 @@ public class Restaurante {
     @Column(name="res_id") private int id;
     @Column(name="res_name")private String name;
     @Column(name="res_contact")private String contact;
+    @Column(name="res_lat")private float lat;
+    @Column(name="res_long")private float longt;
   
-    public Restaurante() {
-    }
+   
     public String getName() {
         return name;
     }
@@ -26,5 +27,11 @@ public class Restaurante {
     }  
     public int getId(){
         return id;
+    }
+    public float getLat() {
+        return lat;
+    }
+    public float getLongt() {
+        return longt;
     }
 }
