@@ -5,6 +5,8 @@ import java.util.Optional;
 import com.example.p1.models.Restaurante;
 import com.example.p1.models.exceptions.NotFoundException;
 import com.example.p1.models.repositories.RestauranteRepository;
+import com.example.p1.models.views.RestauranteView;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,8 +35,8 @@ public class RestauranteController
     }
 
    @GetMapping(path = "/not/{id:[0-9]+}", produces= MediaType.APPLICATION_JSON_VALUE)
-   public Iterable<String> getResNoAli1(@PathVariable int id) {
-       return restauranteRepository.getResNoAli1();
+   public Iterable<RestauranteView> getResNoAli1(@PathVariable int id) {
+       return restauranteRepository.getResNoAli1(id);
    }
 }
 
