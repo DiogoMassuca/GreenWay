@@ -20,7 +20,7 @@ public class Intol {
     public Intol() {
     }
 
-    public int getIntolId() {
+    public int getId() {
         return id;
     }
 
