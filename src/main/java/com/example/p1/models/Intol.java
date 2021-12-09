@@ -15,7 +15,7 @@ public class Intol {
     @Column(name="intol_id") private int id;
     @Column(name="intol_name") private String name;
     @Column(name="intol_user_id")private int user_id;
-    @Column(name="intol_ali_id")private String ali_name;
+    @Column(name="intol_ali_id")private int ali_id;
 
     public Intol() {
     }
@@ -28,8 +28,8 @@ public class Intol {
         return user_id;
     }
 
-    public String getAlimento() {
-        return ali_name;
+    public int getAlimento() {
+        return ali_id;
     }
 
     public String getName() {
