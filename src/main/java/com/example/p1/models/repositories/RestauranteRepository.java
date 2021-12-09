@@ -14,6 +14,5 @@ public interface RestauranteRepository extends CrudRepository<Restaurante, Integ
                             
                             @Query(value=resQuery1 + " AND intol_id<>:id", nativeQuery=true)
                             Iterable<RestauranteView>getResNoAli1(@Param ("id") int id);        
-                   
     }
 
