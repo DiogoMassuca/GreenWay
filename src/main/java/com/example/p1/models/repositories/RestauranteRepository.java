@@ -8,7 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 public interface RestauranteRepository extends CrudRepository<Restaurante, Integer>{
-        String resQuery1 = "SELECT res_name restauranteName, res_long restauranteLat, res_long restauranteLongt" +
+        String resQuery1 = "SELECT res_name restauranteName, res_lat restauranteLat, res_long restauranteLongt" +
                             " FROM restaurantes, ementas, pratos, alimentos, pratoalimento, intols" +
                             " WHERE eme_res_id = res_id AND eme_pra_id = pra_id AND pa_pra_id = pra_id AND pa_ali_id = ali_id AND intol_ali_id = ali_id";
                             
