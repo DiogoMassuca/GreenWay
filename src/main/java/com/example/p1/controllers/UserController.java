@@ -9,6 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -44,8 +45,8 @@ public class UserController {
         else return _user.get();
     }
     
-    @PostMapping(path = "/{name}/{password}/{email}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public void createUser(@PathVariable String name, @PathVariable String password, @PathVariable String email) {
-        String created = userRepository.createUser(name, password, email);
+    @PostMapping(path = "/created", produces = MediaType.APPLICATION_JSON_VALUE)
+    public void createUser(@RequestBody User user) {
+        Integer created = userRepository.createUser(user);
     }
 }
