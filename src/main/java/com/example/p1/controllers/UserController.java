@@ -46,6 +46,6 @@ public class UserController {
     
     @PostMapping(path = "/{name}/{password}/{email}", produces = MediaType.APPLICATION_JSON_VALUE)
     public void createUser(@PathVariable String name, @PathVariable String password, @PathVariable String email) {
-        Integer created = userRepository.createUser(name, password, email);
+        String created = userRepository.createUser(name, password, email);
     }
 }
