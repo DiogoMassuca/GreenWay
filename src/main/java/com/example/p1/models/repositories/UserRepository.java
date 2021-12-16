@@ -15,7 +15,7 @@ public interface UserRepository extends CrudRepository<User, Integer>{
     @Query(value="insert into users (user_name, user_email, user_password, user_bdate)"+
         " values(:#{#User.name}, :#{#User.email}, :#{#User.password}, "+
         ":#{#User.bdate})", nativeQuery=true)
-    Integer createUser(@Param("user_name") String name,
+    String createUser(@Param("user_name") String name,
     @Param("user_password") String password,
     @Param("user_email") String email);
 
