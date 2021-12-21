@@ -3,3 +3,10 @@ from restaurantes, ementas, pratos, alimentos, pratoalimento
 where eme_res_id = res_id and eme_pra_id = pra_id and pa_pra_id = pra_id and pa_ali_id = ali_id and ali_id <> 1
 
 //Seleciona os restaurantes que têm pratos que não têm o alimento com o id "1"
+
+insert into users (user_name, user_email, user_password, user_bdate)"+
+        " values(:#{#User.name}, :#{#User.email}, :#{#User.password}, "+
+        ":#{#User.bdate}
+
+//Procura um user pelo Username e password
+
