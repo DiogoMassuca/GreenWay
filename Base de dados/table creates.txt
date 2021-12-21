@@ -11,6 +11,8 @@ create table restaurantes(
 	res_name VARCHAR (60) not null,
 	res_id SERIAL not null,
 	res_contact VARCHAR (60),
+	res_lat float not null,
+	res_long float not null,
 	primary key (res_id)
 );
 
